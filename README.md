@@ -1,71 +1,77 @@
-<h1 align="center">Hi there, I'm Sourabh Prajapati 👋</h1>
+<h1 align="center">Hi, I'm Sourabh Prajapati 👋</h1>
 
-<h3 align="center">Full-Stack + DevOps Engineer • I build apps and the cloud infrastructure they run on</h3>
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=sourabhprajapati&label=Profile%20views&color=0e75b6&style=flat" alt="profile views" />
-</p>
+<h3 align="center">Full-Stack & Mobile Developer • React, React Native, Next.js, FastAPI • AWS & CI/CD</h3>
 
 ---
 
 ### 🚀 About Me
 
-- 🔭 I build **full-stack products** and the **reproducible, secure infrastructure** they run on
-- 🧱 Started as a **full-stack MERN developer** (2+ yrs shipping production web & mobile apps — a school-management ERP and an Olympiad platform handling 10,000+ records)
-- ☁️ Moved into **DevOps** to own the whole lifecycle — from the API contract down to the cluster it deploys on
-- 👨‍💻 **Team Lead** with 5+ years in tech; I care about automation, reliability, and reproducible environments (SRE & DevSecOps principles)
-- 💡 Available for **freelance / contract** work — full-stack builds, EKS provisioning, CI/CD setup, IaC, security hardening. Open to full-time roles too
-- 📫 Reach me through the links below
+- 🏫 I build **education technology products** used daily by schools: web portals, mobile apps and the pipelines that ship them
+- 🧩 5+ years in tech. I take features from **database schema to production**, including app store releases
+- 🔁 Alongside my own work, I **review pull requests and run production releases** for our development team
+- ☁️ Hands-on with **AWS, Docker, Terraform and Kubernetes**, and always sharpening my DevOps skills
+- 💼 Available for **freelance and contract work**: React Native releases, full-stack features and AWS deployments
 
 ---
 
-### 💻 What I Do — Full-Stack
+### 💻 Production Work
 
-- Production web & mobile apps with **MERN, Next.js, React Native, TypeScript**
-- Secure **REST APIs** with JWT auth and role-based access control
-- **MongoDB** schemas with indexing & aggregation pipelines tuned for large datasets
-- Reusable component libraries and real-time features
+**Olympiad registration portal** · *lead developer* · FastAPI, React, PostgreSQL, Docker, AWS<br>
+Registration, seat allocation and admit cards for an inter-school olympiad, replacing manual spreadsheets. I wrote most of the codebase: admin and school workspaces with strict role isolation, bulk Excel import with validation and duplicate detection, deterministic roll numbers, a three-step verify-and-lock flow, HMAC-signed login links, an admit card designer with signature capture and Word export, and a bilingual English/Hindi interface. SQLite locally, PostgreSQL in production, Dockerized and deployed to AWS.
 
-### ⚙️ What I Do — DevOps
+**School ERP mobile app** · React Native, iOS and Android<br>
+Companion app bringing fees, attendance, homework, results and timetables to parents, students and teachers. Includes charts, PDF marksheets, Excel export and offline storage. The server encrypts every API response and React Native has no Web Crypto, so I wrote a decryption layer that patches fetch and axios globally instead of changing hundreds of call sites. I also own the release pipeline: Codemagic and EAS builds, keystore signing, App Store Connect and TestFlight.
 
-- Provision production-grade **AWS EKS** via **Terraform** — VPC, node groups, autoscaling, TLS — rebuildable in minutes
-- Automated **CI/CD with GitOps** — deploys are one push, auditable, zero manual steps
-- Security baked into the pipeline — **Trivy, SonarQube, OWASP** scanning with gates that fail builds on critical findings
-- Observability with **Prometheus + Grafana** so production is actually visible
+**Reels feature for a student talent app** · React Native<br>
+Vertical video feed with correct seek and playback handling, share and report sheets, search, public profiles and the full auth flow. Plus a GitHub Actions and fastlane pipeline that ships iOS builds to TestFlight.
+
+**Video review platform** · Next.js, Prisma, PostgreSQL, AWS S3<br>
+Back office where student video submissions move through evaluator, reviewer and moderator stages. Prisma schema and migrations, follow and password-reset APIs, and a fix for ffmpeg thumbnail failures on videos with non-standard H.264 colour ranges.
+
+---
+
+### 🤝 Team Projects I Contributed To
+
+**Multi-tenant school ERP** · React, Node.js, Express, MongoDB<br>
+School management platform used daily by staff, students and parents: admissions, fees with concessions and late fees, attendance, exams, result cards, timetables, transport, ID and admit cards, and SMS credits, across 95 REST modules with AES-256 encrypted API responses. My work: role-based permission guards, paid-fee processing, the activity calendar, and the integration with our question-paper generator.
+
+**AI answer-sheet checker** · Python, FastAPI, Celery, Redis, PostgreSQL, S3<br>
+Automatically grades scanned handwritten early-years exam sheets, with around 20 question-type evaluators built on Google Vision and Gemini, and a reconciler that re-drives stuck sheets. My work: the production cutover to AWS, including server deploy scripts and fixes for S3 configuration and for storage being wiped on redeploy.
+
+**AI question-paper generator** · Python, FastAPI, LlamaIndex, Pinecone, Gemini<br>
+Generates exam papers strictly from the textbook series a school owns, using retrieval over indexed PDFs, with PDF and editable Word export including Hindi and Sanskrit Devanagari. My work: API changes and font rendering fixes in the PDF pipeline.
+
+<sub>All production and team projects were built for my employer, so their code is private.</sub>
+
+---
+
+### ⚙️ DevOps Projects
+
+**[EasyShop](https://github.com/sourabhprajapati/EasyShop)** · E-commerce app on AWS EKS<br>
+End-to-end deployment of an open-source training project. Terraform provisions the VPC, EKS cluster and Jenkins server. A Jenkins pipeline builds Docker images, runs tests, scans with Trivy and updates the Kubernetes manifests. The cluster runs a MongoDB StatefulSet, autoscaling and HTTPS ingress with cert-manager. I also fixed the pipeline's disk exhaustion and oversized builds.
+
+**[Wanderlog](https://github.com/sourabhprajapati/Wanderlog)** · DevSecOps CI/CD pipeline<br>
+Worked through a security-focused pipeline for an open-source travel blog app: Jenkins with Trivy, OWASP and SonarQube quality gates, Docker builds and Terraform-provisioned AWS infrastructure.
+
+**[Cloud-Native Microservices Platform](https://github.com/sourabhprajapati/cloudnative-microservices-platform)** · Kubernetes reference system<br>
+Forked the OpenTelemetry demo to study a polyglot microservices system on Kubernetes: Kafka messaging, gRPC between services, and observability with OpenTelemetry, Prometheus, Grafana and Jaeger.
+
+---
+
 
 ---
 
 ### 🛠️ Tech Stack
 
 <p align="left">
-  <img src="https://skillicons.dev/icons?i=js,ts,react,nextjs,nodejs,express,mongodb,postgres,docker,kubernetes,aws,terraform,ansible,jenkins,githubactions,prometheus,grafana,git,github,linux" alt="tech stack" />
+  <img src="https://skillicons.dev/icons?i=js,ts,react,nextjs,nodejs,express,python,fastapi,postgres,mongodb,prisma,tailwind,docker,aws,githubactions,terraform,kubernetes,jenkins,git,linux" alt="tech stack" />
 </p>
 
-**Frontend / App:** React · Next.js · React Native · TypeScript
-**Backend:** Node.js · Express · MongoDB · PostgreSQL
-**DevOps / Cloud:** Kubernetes · AWS (EKS, EC2, IAM, VPC) · Terraform · Ansible · Jenkins · GitHub Actions · ArgoCD · Docker · Helm
-**Security / Observability:** Trivy · SonarQube · OWASP · Prometheus · Grafana
-
----
-
-### 📌 Featured Projects
-
-- **Cloud-Native Microservices Platform** — Multi-service polyglot app on Kubernetes with Kafka async messaging & gRPC. Observability via OpenTelemetry, Prometheus, Grafana, Jaeger. CI with GitHub Actions feeding a GitOps flow.
-- **EasyShop — Containerized E-Commerce on AWS EKS** — Production-grade EKS provisioned with Terraform. Full K8s manifests (MongoDB StatefulSet, HPA, Ingress + cert-manager TLS). Automated build-to-deploy with Jenkins, Docker & Trivy scanning.
-- **Wanderlog — Secure CI/CD Pipeline** — Jenkins pipeline with Trivy, OWASP & SonarQube gates, Docker builds, Terraform-provisioned AWS infra.
-
----
-
-### 📊 GitHub Stats
-
-<p align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=sourabhprajapati&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true" alt="github stats" />
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sourabhprajapati&layout=compact&theme=tokyonight" alt="top languages" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=sourabhprajapati&theme=tokyonight" alt="github streak" />
-</p>
+**Frontend:** React · Next.js · TypeScript · Tailwind<br>
+**Mobile:** React Native · EAS · Codemagic · fastlane · TestFlight · Google Play Console<br>
+**Backend:** Node.js · Express · Python · FastAPI<br>
+**Data:** PostgreSQL · Prisma · MongoDB · SQLite<br>
+**Cloud & DevOps:** AWS (EC2, ECS, S3, EKS) · Docker · GitHub Actions · Terraform · Kubernetes · Jenkins · PM2
 
 ---
 
@@ -73,10 +79,5 @@
 
 <p align="left">
   <a href="https://www.linkedin.com/in/sourabh-prajapati-43b467189/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin" /></a>
-  <a href="https://github.com/sourabhprajapati" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="github" /></a>
   <a href="mailto:sourabhprajapati920@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="email" /></a>
 </p>
-
----
-
-<p align="center"><i>I care about automation, reliability, and reproducible environments. Let's build something that ships reliably. ⭐</i></p>
